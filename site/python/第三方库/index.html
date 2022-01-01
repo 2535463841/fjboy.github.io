@@ -34,6 +34,8 @@
       
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1082,8 +1084,8 @@ def show_blog(post_id):
     模板片段缓存
         使用cache标签进行缓存
 在HTML文件中添加：</p>
-<pre><code>{%load cache%}
-{%cache 60  缓存名字 %}
+<pre><code>\{\%load cache\%\}
+\{\%cache 60  缓存名字 \%\}
 </code></pre>
 <blockquote>
 <p>session和cookie</p>
@@ -1269,6 +1271,10 @@ CORS_ORIGIN_ALLOW_ALL = True</p>
     
     
       <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>
