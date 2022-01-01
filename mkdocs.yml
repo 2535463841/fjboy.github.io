@@ -1,1 +1,6 @@
-site_name: My Docs
+site_name: FJBoy's Docs
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
