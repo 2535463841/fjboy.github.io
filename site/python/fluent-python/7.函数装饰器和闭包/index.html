@@ -189,7 +189,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../eventlet/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../1.%E5%9F%BA%E7%A1%80/" class="md-tabs__link md-tabs__link--active">
         Python
       </a>
     </li>
@@ -289,6 +289,24 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -438,6 +456,18 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_3">
           Python
@@ -457,8 +487,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eventlet/" class="md-nav__link">
-        Eventlet
+      <a href="../../1.%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        1.基础
       </a>
     </li>
   
@@ -471,8 +501,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%BC%98%E5%8C%96/" class="md-nav__link">
-        优化
+      <a href="../../2.%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        2.内置模块
       </a>
     </li>
   
@@ -485,8 +515,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="md-nav__link">
-        内置模块
+      <a href="../../3.%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="md-nav__link">
+        3.第三方库
       </a>
     </li>
   
@@ -499,22 +529,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%9F%BA%E7%A1%80/" class="md-nav__link">
-        基础
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="md-nav__link">
-        第三方库
+      <a href="../../4.%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        4.优化
       </a>
     </li>
   
@@ -532,18 +548,32 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
-        <label class="md-nav__link" for="__nav_3_6">
+      
+        <label class="md-nav__link" for="__nav_3_5">
           Fluent python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Fluent python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_6">
+        <label class="md-nav__title" for="__nav_3_5">
           <span class="md-nav__icon md-icon"></span>
           Fluent python
         </label>
@@ -719,6 +749,14 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_4">
           其他
@@ -794,6 +832,16 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5">
@@ -946,44 +994,42 @@
 <p>python 不要求声明变量，但是假定在函数中赋值的变量是局部变量。
 如果希望函数把变量当作全局变量，需要加 global声明。
 示例：</p>
-<pre><code class="language-python">a = 1
+<pre class="highlight"><code class="language-python">a = 1
 def foo():
-    &quot;&quot;&quot;
+    """
     &gt;&gt;&gt; foo()
     Traceback (most recent call last):
     ...
     UnboundLocalError: local variable 'a' referenced before assignment
-    &quot;&quot;&quot;
+    """
     print(a)
-    a = 2
-</code></pre>
+    a = 2</code></pre>
 <h2 id="2">2.闭包</h2>
 <p>闭包就是能够读取其他函数内部变量的函数。只有涉及到嵌套函数才会涉及到闭包问题。
 闭包会保留定义函数时自由变量（free variable）的绑定，这样调用函数时，虽然定义作用域不起作用，但是仍能使用那些绑定。
 示例：</p>
-<pre><code class="language-python">def make_average():
-    &quot;&quot;&quot;
+<pre class="highlight"><code class="language-python">def make_average():
+    """
     &gt;&gt;&gt; avg = make_average()
     &gt;&gt;&gt; avg(1)
     1.0
     &gt;&gt;&gt; avg(2)
     1.5
-    &quot;&quot;&quot;
+    """
     numbers = []
     def average(new_num):
         numbers.append(new_num)
-        return sum(numbers) / len(numbers)
-</code></pre>
+        return sum(numbers) / len(numbers)</code></pre>
 <p><strong>闭包（numbers是自由变量）</strong></p>
 <p>但是，如果将其改造成如下示例，将报错：</p>
-<pre><code class="language-python">def make_average():
-    &quot;&quot;&quot;
+<pre class="highlight"><code class="language-python">def make_average():
+    """
     &gt;&gt;&gt; avg = make_average()
     &gt;&gt;&gt; avg(1)
     Traceback (most recent call last):
     ...
     UnboundLocalError: local variable 'total' referenced before assignment
-    &quot;&quot;&quot;
+    """
     count = 0
     total = 0
 
@@ -991,13 +1037,12 @@ def foo():
         total += new_num
         count += 1
         return total / count
-return average
-</code></pre>
+return average</code></pre>
 <p>因为，count ，total 是不可变类型。<code>total += new_num</code>,相当于 <code>total = total + new_num</code>,对total 赋值导致 其变成了局部变量。</p>
 <h2 id="3nonlocal">3.nonlocal</h2>
 <p>为了解决该问题，python3,引入 关键字 <strong>nonlocal</strong> ，声明变量为自由变量。
 示例：</p>
-<pre><code class="language-python">def make_average():
+<pre class="highlight"><code class="language-python">def make_average():
     count = 0
     total = 0              
 
@@ -1007,8 +1052,7 @@ return average
         count += 1
         return total / count
 
-    return  average  
-</code></pre>
+    return  average  </code></pre>
 <p>python2可以用可变类型（如dict解决，info= {‘count’:0, 'total': 0}）</p>
 <h2 id="5">5.一些有用的装饰器</h2>
 <table>
@@ -1110,7 +1154,7 @@ return average
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
       <script src="../../../assets/javascripts/bundle.e1a181d9.min.js"></script>

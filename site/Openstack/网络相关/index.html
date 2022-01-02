@@ -189,7 +189,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../python/eventlet/" class="md-tabs__link">
+      <a href="../../python/1.%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
         Python
       </a>
     </li>
@@ -291,6 +291,24 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -502,6 +520,18 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_3">
           Python
@@ -521,8 +551,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/eventlet/" class="md-nav__link">
-        Eventlet
+      <a href="../../python/1.%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        1.基础
       </a>
     </li>
   
@@ -535,8 +565,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E4%BC%98%E5%8C%96/" class="md-nav__link">
-        优化
+      <a href="../../python/2.%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        2.内置模块
       </a>
     </li>
   
@@ -549,8 +579,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="md-nav__link">
-        内置模块
+      <a href="../../python/3.%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="md-nav__link">
+        3.第三方库
       </a>
     </li>
   
@@ -563,22 +593,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
-        基础
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="md-nav__link">
-        第三方库
+      <a href="../../python/4.%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        4.优化
       </a>
     </li>
   
@@ -594,18 +610,32 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
-        <label class="md-nav__link" for="__nav_3_6">
+      
+        <label class="md-nav__link" for="__nav_3_5">
           Fluent python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Fluent python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_6">
+        <label class="md-nav__title" for="__nav_3_5">
           <span class="md-nav__icon md-icon"></span>
           Fluent python
         </label>
@@ -723,6 +753,14 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_4">
           其他
@@ -798,6 +836,16 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5">
@@ -948,7 +996,7 @@
   <h1>网络相关</h1>
 
 <h2 id="_1">三次握手</h2>
-<pre><code class="language-mermaid">sequenceDiagram
+<pre class="mermaid"><code>sequenceDiagram
 
 participant Client
 participant Server
@@ -960,8 +1008,7 @@ Note right of Server: SYN_RCVD
 Server --&gt;&gt; Client: SYN=1,ACK=1,ack=J+1,seq=K
 Note left of Client: ESTABLISHED
 Client -&gt;&gt; Server: ACK=1, ack=K+1
-Note right of Server: ESTABLISHED
-</code></pre>
+Note right of Server: ESTABLISHED</code></pre>
 <p><img alt="image-20211215173920664" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215173920664.png" /></p>
 <h2 id="_2">网络设备</h2>
 <h3 id="_3">网关和路由器</h3>
@@ -1026,12 +1073,11 @@ Note right of Server: ESTABLISHED
 <p>​       源地址修改为负载均衡设备下行与对应RS设备接口的IP地址，源端口号随机）发送给RS；</p>
 <p>当RS收到报文后，会以（RS接口IP地址为源，负载均衡设备地址为目的）回复报文；</p>
 <p>负载均衡设备将源修改为VIP，目的端口号修改为客户端的源端口号，目的IP修改为Client的源IP回复报文。</p>
-<pre><code class="language-mermaid">flowchart LR
+<pre class="mermaid"><code>flowchart LR
 
 A[ClientA:port1]:::client ===&gt; SLB:::lb --&gt; ServerA:portA &amp; ServerB:portB &amp; ...
 classDef client fill: white;
-classDef lb fill:#f96;
-</code></pre>
+classDef lb fill:#f96;</code></pre>
 <blockquote>
 <p>七层SLB和四层SLB的区别：</p>
 </blockquote>
@@ -1082,15 +1128,14 @@ classDef lb fill:#f96;
 </ul>
 <p>TCP 模式下 HAProxy 无法通过HTTP Cookie实现会话保持，但可以实现基于客户端IP的会话保持，<code>balance source</code></p>
 <p><strong>Layer 4 LoadBalance</strong></p>
-<pre><code class="language-mermaid">flowchart LR
+<pre class="mermaid"><code>flowchart LR
 
 subgraph web-backend
  web-1 &amp; web-2
 end
-client == \nhttp://yourdomain.com/... ==&gt; LB ==&gt; web-backend ==&gt; DB
-</code></pre>
+client == \nhttp://yourdomain.com/... ==&gt; LB ==&gt; web-backend ==&gt; DB</code></pre>
 <p><strong>Layer 7 LoadBalance</strong></p>
-<pre><code class="language-mermaid">flowchart LR
+<pre class="mermaid"><code>flowchart LR
 
 subgraph web-backend
 web-1 &amp; web-2
@@ -1100,8 +1145,7 @@ blog-1 &amp; blog-2
 end
 
 client ==&gt; |\nhttp://yourdomain.com/...| LB --&gt;|/web| web-backend --&gt; DB
-                                         LB --&gt;|/blog| blog-backend --&gt; DB
-</code></pre>
+                                         LB --&gt;|/blog| blog-backend --&gt; DB</code></pre>
 <p>总的来说，一般是lvs做4层负载；nginx做7层负载(也能做4层负载, 通过stream模块)；</p>
 <p>haproxy比较灵活，4层和7层负载均衡都能做</p>
 
@@ -1169,7 +1213,7 @@ client ==&gt; |\nhttp://yourdomain.com/...| LB --&gt;|/web| web-backend --&gt; D
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
       <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>

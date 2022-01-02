@@ -4,10 +4,19 @@ theme:
   language: zh
   features:
     - navigation.tabs
+    - navigation.indexes
   # hljs_style: github
 markdown_extensions:
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       use_pygments: false
+
+
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
   - javascripts/config.js

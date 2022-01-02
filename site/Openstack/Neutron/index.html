@@ -189,7 +189,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../python/eventlet/" class="md-tabs__link">
+      <a href="../../python/1.%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
         Python
       </a>
     </li>
@@ -291,6 +291,24 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -524,6 +542,18 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_3">
           Python
@@ -543,8 +573,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/eventlet/" class="md-nav__link">
-        Eventlet
+      <a href="../../python/1.%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        1.基础
       </a>
     </li>
   
@@ -557,8 +587,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E4%BC%98%E5%8C%96/" class="md-nav__link">
-        优化
+      <a href="../../python/2.%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        2.内置模块
       </a>
     </li>
   
@@ -571,8 +601,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="md-nav__link">
-        内置模块
+      <a href="../../python/3.%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="md-nav__link">
+        3.第三方库
       </a>
     </li>
   
@@ -585,22 +615,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
-        基础
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="md-nav__link">
-        第三方库
+      <a href="../../python/4.%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        4.优化
       </a>
     </li>
   
@@ -616,18 +632,32 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
-        <label class="md-nav__link" for="__nav_3_6">
+      
+        <label class="md-nav__link" for="__nav_3_5">
           Fluent python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Fluent python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_6">
+        <label class="md-nav__title" for="__nav_3_5">
           <span class="md-nav__icon md-icon"></span>
           Fluent python
         </label>
@@ -745,6 +775,14 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_4">
           其他
@@ -820,6 +858,16 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5">
@@ -1072,17 +1120,16 @@
 <h2 id="nuetronserver">NuetronServer</h2>
 <p>neutron-server的本质是一个Python Web Server Gateway Interface（WSGI），是通过eventlet lib来实现服务的异步并发模型的。实际工作时，通过'serve_wsgi'启动点(Entry point)来构造了一个NeutronApiService实例，通过该实例生成Eventlet，Greenpool来运行WSGI app并回应客户端请求。</p>
 <p>研究之前，首先需要先了解下Entry point的概念。</p>
-<pre><code class="language-ini">[entry_points]
+<pre class="highlight"><code class="language-ini">[entry_points]
 console_scripts =
     neutron-db-manage = neutron.db.migration.cli:main
     neutron-debug = neutron.debug.shell:main
-    neutron-dhcp-agent = neutron.cmd.eventlet.agents.dhcp:main
-</code></pre>
+    neutron-dhcp-agent = neutron.cmd.eventlet.agents.dhcp:main</code></pre>
 <h2 id="gre">GRE模式</h2>
 <p><img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215184611700.png" alt="image-20211215184611700" style="zoom:80%;" /></p>
 <p>隧道桥（br-tun）根据 OpenFlow 规则将 VLAN 标记的流量从集成网桥转换为隧道 ID。</p>
 <p>隧道桥允许不同网络的实例彼此进行通信。隧道有利于封装在非安全网络上传输的流量，它支持两层网络，即 GRE 和 VXLAN。</p>
-<pre><code class="language-bash">**# virsh dumpxml instance-000008ed |grep bridge**
+<pre class="highlight"><code class="language-bash">**# virsh dumpxml instance-000008ed |grep bridge**
   &lt;interface type='bridge'&gt;
    &lt;source bridge='**qbrc68f8b26-23**'/&gt;
   &lt;interface type='bridge'&gt;
@@ -1096,12 +1143,12 @@ qbr7cff5be4-5c     8000.8a66ef285ffe    no       qvb7cff5be4-5c
 
 #ovs-vsctl show
 Bridge br-int
-    Port &quot;qvoc68f8b26-23&quot;
+    Port "qvoc68f8b26-23"
       tag: 7
-      Interface &quot;qvoc68f8b26-23&quot;
-    Port &quot;qvo7cff5be4-5c&quot;
+      Interface "qvoc68f8b26-23"
+    Port "qvo7cff5be4-5c"
      tag: 6
-      Interface &quot;qvo7cff5be4-5c&quot;
+      Interface "qvo7cff5be4-5c"
     Port patch-tun
       Interface patch-tun
        type: patch
@@ -1114,8 +1161,7 @@ Bridge br-int
     Port patch-int
       Interface patch-int
         type: patch
-        options: {peer=patch-tun}
-</code></pre>
+        options: {peer=patch-tun}</code></pre>
 <h2 id="vlan">vlan模式</h2>
 <p><img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215190542910.png" alt="image-20211215190542910" style="zoom: 50%;" /></p>
 <h2 id="_3">几个典型流程案例</h2>
@@ -1243,7 +1289,7 @@ Neutron所采取就是第3种，所以说，它在数据库层面的租户隔离
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
       <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>

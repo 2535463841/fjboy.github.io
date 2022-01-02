@@ -189,7 +189,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../python/eventlet/" class="md-tabs__link">
+      <a href="../../python/1.%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
         Python
       </a>
     </li>
@@ -291,6 +291,24 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -475,6 +493,18 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_3">
           Python
@@ -494,8 +524,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/eventlet/" class="md-nav__link">
-        Eventlet
+      <a href="../../python/1.%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        1.基础
       </a>
     </li>
   
@@ -508,8 +538,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E4%BC%98%E5%8C%96/" class="md-nav__link">
-        优化
+      <a href="../../python/2.%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        2.内置模块
       </a>
     </li>
   
@@ -522,8 +552,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="md-nav__link">
-        内置模块
+      <a href="../../python/3.%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="md-nav__link">
+        3.第三方库
       </a>
     </li>
   
@@ -536,22 +566,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
-        基础
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="md-nav__link">
-        第三方库
+      <a href="../../python/4.%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        4.优化
       </a>
     </li>
   
@@ -567,18 +583,32 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
-        <label class="md-nav__link" for="__nav_3_6">
+      
+        <label class="md-nav__link" for="__nav_3_5">
           Fluent python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Fluent python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_6">
+        <label class="md-nav__title" for="__nav_3_5">
           <span class="md-nav__icon md-icon"></span>
           Fluent python
         </label>
@@ -696,6 +726,14 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_4">
           其他
@@ -771,6 +809,16 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5">
@@ -896,19 +944,35 @@
 <blockquote>
 <p>RPC系统结构</p>
 </blockquote>
-<pre><code class="language-mermaid">flowchart LR
+<pre class="highlight"><code class="language-flow">st=start:Start
+i=inputoutput:输入年份n
+cond1=condition:n能否被4整除？
+cond2=condition:n能否被100整除？
+cond3=condition:n能否被400整除？
+o1=inputoutput:输出非闰年
+o2=inputoutput:输出非闰年
+o3=inputoutput:输出闰年
+o4=inputoutput:输出闰年
+e=end
+
+st-i-cond1
+cond1(no)-o1-e
+cond1(yes)-cond2
+cond2(no)-o3-e
+cond2(yes)-cond3
+cond3(yes)-o2-e
+cond3(no)-o4-e</code></pre>
+<pre class="mermaid"><code>flowchart LR
 
 Consumer --&gt; Provider
-Provider --&gt; Consumer
-</code></pre>
+Provider --&gt; Consumer</code></pre>
 <p>Consumer调用的Provider提供的服务。</p>
 <blockquote>
 <p>Message Queue系统结构：</p>
 </blockquote>
-<pre><code class="language-mermaid">flowchart LR
+<pre class="mermaid"><code>flowchart LR
 Consumer --&gt; Queue --&gt; Provider
-Provider --&gt; Queue --&gt; Consumer
-</code></pre>
+Provider --&gt; Queue --&gt; Consumer</code></pre>
 <p>Sender发送消息给Queue；Receiver从Queue拿到消息来处理。</p>
 <p>在架构上，RPC和Message的差异点是，Message有一个中间结点Message Queue，可以把消息存储。</p>
 <p><strong>消息的特点</strong></p>
@@ -962,16 +1026,15 @@ Message Queue是异步单向的消息。发送消息设计成是不需要等待�
 </li>
 <li>
 <p>Queue：消息队列，用来保存消息，供消费者消费。</p>
-<p>```mermaid
-flowchart LR</p>
-<p>subgraph Server
+<pre class="mermaid"><code>flowchart LR
+
+subgraph Server
     subgraph Virtual Host
         A(Exchange) --- B(Message Queue)
     end
 end
 Publisher\nApplication --&gt; A
-B --&gt; Consumer\nApplication
-```</p>
+B --&gt; Consumer\nApplication</code></pre>
 </li>
 </ul>
 <p><strong>常用交换器</strong></p>
@@ -1013,12 +1076,11 @@ B --&gt; Consumer\nApplication
 </li>
 <li>
 <p>Service 收到该消息后进行处理，然后将response 发到 exchange，并设置消息的 routing_key 为原消息的 reply_to 属性，以及设置其 correlation_id 为原消息的 correlation_id 。</p>
-<p><code>python
-ch.basic_publish(exchange='',
+<pre class="highlight"><code class="language-python">ch.basic_publish(exchange='',
                  routing_key=props.reply_to, 
                  properties=pika.BasicProperties(
                      correlation_id = props.correlation_id),
-                 body=str(response))</code></p>
+                 body=str(response))</code></pre>
 </li>
 <li>
 <p>Exchange 将消息转发到 reponse_q</p>
@@ -1092,7 +1154,7 @@ ch.basic_publish(exchange='',
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
       <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
