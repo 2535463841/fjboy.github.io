@@ -4,21 +4,23 @@ theme:
   language: zh
   features:
     - navigation.tabs
-    - navigation.indexes
-  # hljs_style: github
+
+plugins:
+  - mermaid2
+
 markdown_extensions:
-markdown_extensions:
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       use_pygments: false
-
+  - pymdownx.arithmatex:
+      generic: true
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
+  - https://unpkg.com/mermaid@8.13.8/dist/mermaid.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/config.js
+  # - javascripts/mathjax.js
+
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css

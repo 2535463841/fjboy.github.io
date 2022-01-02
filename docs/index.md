@@ -1,33 +1,30 @@
-# Welcome to MkDocs
+# 首页
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+## 安装 mkdocs
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
 * `mkdocs build` - Build the documentation site.
 * `mkdocs -h` - Print help message and exit.
 
-## Project layout
+## 目录
 
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-## extensions
+## 安装material主题
 
 ```shell
 pip install mkdocs-material
+```
+
+安装 mermaid 插件
+
+```
 pip install mkdocs-mermaid2-plugin
 ```
 
-```mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
