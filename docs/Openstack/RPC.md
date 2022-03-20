@@ -38,7 +38,7 @@ RPC也可以是异步调用。
 
 如果以异步RPC的方式使用，Consumer（Client）线程消耗可以去掉。但不能做到像消息一样暂存消息/请求，压力会直接传导到服务Provider。
 
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215191051474.png" alt="image-20211215191051474" style="zoom:80%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215191051474.png" alt="image-20211215191051474" style="zoom:80%;" />
 
 - Service     A的应用层代码中，调用了Calculator的一个实现类的add方法，希望执行一个加法运算；
 - 这个Calculator实现类，内部并不是直接实现计算器的加减乘除逻辑，而是通过远程调用Service     B的RPC接口，来获取运算结果，因此称之为**Stub**；
@@ -100,7 +100,7 @@ RabbitMQ常用的交换器类型有direct、topic、fanout、headers四种。
 
 实现原理：
 
-![image-20211215184006816](https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215184006816.png)
+![image-20211215184006816](https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215184006816.png)
 
 1. 客户端 Client 设置消息的 routing key 为 Service 的队列 op_q；设置消息的 reply-to 属性为返回的 response 的目标队列 reponse_q，设置其 correlation_id 为以随机UUID，然后将消息发到 exchange。比如 channel.basic_publish(exchange='', routing_key='op_q', properties=pika.BasicProperties(reply_to = reponse_q, correlation_id = self.corr_id),body=request)
 

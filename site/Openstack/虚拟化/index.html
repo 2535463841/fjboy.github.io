@@ -390,10 +390,10 @@
 <h1>虚拟化</h1>
 <p>虚拟化主要是通过一个叫做 Hypervisor 的程序实现的。Hypervisor 直接安装在物理机上，多个虚拟机在 Hypervisor 上运行。Hypervisor 实现方式一般是一个特殊定制的 Linux 系统。根据 Hypervisor 的实现方式和所处的位置，虚拟化又分为两种：1型虚拟化和2型虚拟化。</p>
 <h2 id="1">1型虚拟化</h2>
-<p><img alt="image-20211215183606694" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/17/image-20211215183606694.png" style="zoom:50%;"/></p>
+<p><img alt="image-20211215183606694" src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/17/image-20211215183606694.png" style="zoom:50%;"/></p>
 <h2 id="2">2型虚拟化</h2>
 <p>物理机上首先安装常规的操作系统，比如 Redhat Windows。Hypervisor 作为 OS 上的一个程序模块运行，并对管理虚拟机进行管理。KVM、VirtualBox 和 VMWare Workstation 都属于这个类型。</p>
-<p><img alt="image-20211215183508541" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/17/image-20211215183508541.png" style="zoom:50%;"/></p>
+<p><img alt="image-20211215183508541" src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/17/image-20211215183508541.png" style="zoom:50%;"/></p>
 <p>在 x86 平台上最热门运用最广泛的虚拟化方案莫过于 KVM 了。OpenStack 对 KVM 支持得也最好，</p>
 <p>KVM 全称是 Kernel-Based Virtual Machine。也就是说 KVM 是基于 Linux 内核实现的。</p>
 <p>KVM有一个内核模块叫 kvm.ko，只用于管理虚拟 CPU 和内存。 IO 的虚拟化则交给 Linux 内核和Qemu来实现。</p>
@@ -401,10 +401,10 @@
 <h2 id="cpu">cpu虚拟化</h2>
 <p>一个 KVM 虚机在宿主机中其实是一个 qemu-kvm 进程，与其他 Linux 进程一样被调度。</p>
 <p>虚机中的每一个虚拟 vCPU 则对应 qemu-kvm 进程中的一个线程。</p>
-<p><img alt="image-20211215183710833" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/17/image-20211215183710833.png" style="zoom:80%;"/></p>
+<p><img alt="image-20211215183710833" src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/17/image-20211215183710833.png" style="zoom:80%;"/></p>
 <h2 id="_1">内存虚拟化</h2>
 <p>KVM 通过内存虚拟化共享物理系统内存，动态分配给虚拟机。</p>
-<p><img alt="image-20211215183738934" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/17/image-20211215183738934.png"/></p>
+<p><img alt="image-20211215183738934" src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/17/image-20211215183738934.png"/></p>
 <p>KVM 需要实现 VA（虚拟内存） -&gt; PA（物理内存） -&gt; MA（机器内存）之间的地址转换。</p>
 <p>虚机 OS 控制虚拟地址到客户内存物理地址的映射 （VA -&gt; PA），但是虚机 OS 不能直接访问实际机器内存，因此 KVM 需要负责映射客户物理内存到实际机器内存 （PA -&gt; MA）。</p>
 <h2 id="_2">存储虚拟化</h2>

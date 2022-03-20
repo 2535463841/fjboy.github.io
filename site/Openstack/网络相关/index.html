@@ -401,7 +401,7 @@ Note left of Client: ESTABLISHED
 Client -&gt;&gt; Server: ACK=1, ack=K+1
 Note right of Server: ESTABLISHED
 </div>
-<p><img alt="image-20211215173920664" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215173920664.png"/></p>
+<p><img alt="image-20211215173920664" src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215173920664.png"/></p>
 <h2 id="_2">网络设备</h2>
 <h3 id="_3">网关和路由器</h3>
 <p>网关与路由器两者它们的作用都是用在网络当中，主要是用来连接不同子网的主机，这两种都是属于硬件设施，它们都可以对到达该主机的数据包进行转发。</p>
@@ -454,11 +454,11 @@ Note right of Server: ESTABLISHED
 <li>七层就是基于URL等应用层信息的负载均衡；</li>
 <li>同理，还有二层负载均衡（基于MAC地址），三层负载均衡（基于IP地址）；</li>
 </ol>
-<p><img alt="image-20211215173619604" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215173619604.png" style="zoom: 80%;"/></p>
-<p><img alt="image-20211215173635282" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215173635282.png"/></p>
-<p><img alt="image-20211215173648928" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215173648928.png"/></p>
-<p><img alt="image-20211215173659688" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2022/01/01/image-20211215173659688.png"/></p>
-<p><img alt="image-20211215173707794" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2022/01/01/image-20211215173707794.png"/></p>
+<p><img alt="image-20211215173619604" src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215173619604.png" style="zoom: 80%;"/></p>
+<p><img alt="image-20211215173635282" src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215173635282.png"/></p>
+<p><img alt="image-20211215173648928" src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215173648928.png"/></p>
+<p><img alt="image-20211215173659688" src="https://gitee.com/fjboy/cdn/raw/image-bed/2022/01/01/image-20211215173659688.png"/></p>
+<p><img alt="image-20211215173707794" src="https://gitee.com/fjboy/cdn/raw/image-bed/2022/01/01/image-20211215173707794.png"/></p>
 <p><strong>在反向代理模式下，</strong></p>
 <p>当负载均衡设备收到客户端请求后，会记录下此报文（ 源IP地址、目的IP地址、协议号、源端口、目的端口，服务类型以及接口索引），</p>
 <p>将报文（<strong>目的地址更改为优选后的RS设备的IP地址</strong>，目的端口号不变；</p>
@@ -481,9 +481,9 @@ classDef lb fill:#f96;
 <p>反向代理：  相同的 IP+Port 对应同一批 backend</p>
 <p>负载均衡 ： 相同的 IP + Port 可以对应不同的 backend</p>
 <p>例如: haproxy 通过定义 ACL , 设置不同的的转发策略</p>
-<p><img alt="image-20211215174004862" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2022/01/01/image-20211215174004862.png"/></p>
+<p><img alt="image-20211215174004862" src="https://gitee.com/fjboy/cdn/raw/image-bed/2022/01/01/image-20211215174004862.png"/></p>
 <p>对服务器做动静分离</p>
-<p><img alt="image-20211215174015804" src="https://gitee.com/zbw2535463841/images-bed/raw/master/2022/01/01/image-20211215174015804.png"/></p>
+<p><img alt="image-20211215174015804" src="https://gitee.com/fjboy/cdn/raw/image-bed/2022/01/01/image-20211215174015804.png"/></p>
 <p>HAProxy作为L4负载均衡器工作时，不会去解析任何与HTTP协议相关的内容，只在传输层对数据包进行处理。也就是说，以L4模式运行的HAProxy，无法实现根据URL向不同后端转发、通过cookie实现会话保持等功能。同时，在L4模式下工作的HAProxy也无法提供监控页面。但作为L4负载均衡器的HAProxy能够提供更高的性能，适合于基于套接字的服务（如数据库、消息队列、RPC、邮件服务、Redis等），或不需要逻辑规则判断，并已实现了会话共享的HTTP服务。</p>
 <p>mode:</p>
 <table>

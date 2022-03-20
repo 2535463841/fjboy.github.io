@@ -1,4 +1,4 @@
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211218222525643.png" alt="image-20211218222525643" style="zoom:50%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211218222525643.png" alt="image-20211218222525643" style="zoom:50%;" />
 
 哨兵模式是一种特殊的模式，首先Redis提供了哨兵的命令，哨兵是一个独立的进程，作为进程，它会独立运行。其原理是**哨兵通过发送命令，等待****Redis****服务器响应，从而监控运行的多个****Redis****实例。**
 

@@ -80,7 +80,7 @@ console_scripts =
 
 ## GRE模式
 
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215184611700.png" alt="image-20211215184611700" style="zoom:80%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215184611700.png" alt="image-20211215184611700" style="zoom:80%;" />
 
 隧道桥（br-tun）根据 OpenFlow 规则将 VLAN 标记的流量从集成网桥转换为隧道 ID。
 
@@ -124,19 +124,19 @@ Bridge br-int
 
 ## vlan模式
 
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215190542910.png" alt="image-20211215190542910" style="zoom: 50%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215190542910.png" alt="image-20211215190542910" style="zoom: 50%;" />
 
 ## 几个典型流程案例
 
 > 同一个host上同一个子网内虚机之间的通信过程
 
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2022/01/01/image-20211215184942367.png" alt="image-20211215184942367" style="zoom:50%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2022/01/01/image-20211215184942367.png" alt="image-20211215184942367" style="zoom:50%;" />
 
 因为br-int是个虚拟的二层交换机，所以同一个host上的同一个子网内的虚机之间的通信只是经过 br-int 桥，不需要经过 br-tun 桥。
 
 > 不同主机上同一个子网内的虚机之间的通信过程
 
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2022/01/01/image-20211215185016555.png" alt="image-20211215185016555" style="zoom:80%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2022/01/01/image-20211215185016555.png" alt="image-20211215185016555" style="zoom:80%;" />
 
 1. 从左边的虚机1出发的packet，经过Linux bridge到达br-int，被打上 VLAN ID Tag
 
@@ -146,7 +146,7 @@ Bridge br-int
 
 > 虚机访问外网
 
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2022/01/01/image-20211215185056636.png" alt="image-20211215185056636" style="zoom:80%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2022/01/01/image-20211215185056636.png" alt="image-20211215185056636" style="zoom:80%;" />
 
 1. Packet离开虚机，经过Linux bridge， 到达br-int，打上 VLAN ID Tag
 2. 达到 br-tun，将 VLAN ID转化为 Tunnel ID
@@ -159,7 +159,7 @@ Bridge br-int
 
 > 虚机发送DHCP请求
 
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2022/01/01/image-20211215185221201.png" alt="image-20211215185221201" style="zoom:80%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2022/01/01/image-20211215185221201.png" alt="image-20211215185221201" style="zoom:80%;" />
 
 1. 虚机的packet -> br-int -> br-tun -> GRE Tunnel -> eth2 ------>eth2->br-tun->br-int->qDHCP
 2. qDHCP返回其fixed IP地址，原路返回
@@ -174,7 +174,7 @@ Neutron Tenant网络是为tenant中的虚机之间的通信。如果需要不同
 
 > 数据面
 
-![image-20211215185357857](https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215185357857.png)
+![image-20211215185357857](https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215185357857.png)
 
 ​    	br-ethx/tun、br-int分别只有一个用例，这个是属于：用“多租户共享”的方案，来实现多租户隔离。比如br-int、br-ethx通过VLAN来隔离各个租户网络数据流量，br-tun通过相应的tunnel来隔离各个租户网络的流量。
 ​	    qbr跟VM一一对应，这个属于：用“单租户独占”的方案，来实现“多租户隔离”。qbr由于绑定了安全组，它在原生的数据面租户隔离技术的基础上又叠加了一层“安全层”来保证租户隔离。原生的数据面转发（br-ethx/tun、br-int）负责“正常行为”的租户隔离，而安全技术（qbr）负责“异常行为”（非法访问）的租户隔离。

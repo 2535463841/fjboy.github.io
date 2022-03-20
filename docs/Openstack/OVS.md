@@ -10,7 +10,7 @@ OpenFlow是用于管理交换机流表的协议，ovs-ofctl是Open vSwitch提供
 
 在OVS中，流表项作为ovs-ofctl的参数，采用如下的格式：字段=值，如果有多个字段，可以用逗号或空格分开，一些常用的字段列举如下表所示：
 
-![image-20211215190706940](https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215190706940.png)
+![image-20211215190706940](https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215190706940.png)
 
 ##  OVS基本命令分类
 

@@ -2,7 +2,7 @@ Nova是OpenStack云中的计算组织控制器。
 
 支持OpenStack云中实例（instances）生命周期的所有活动都由Nova处理。这样使得Nova成为一个负责管理计算资源、网络、认证、所需可扩展性的平台。
 
-<img src="https://gitee.com/zbw2535463841/images-bed/raw/master/2021/12/18/image-20211215191246850.png" alt="image-20211215191246850" style="zoom: 80%;" />
+<img src="https://gitee.com/fjboy/cdn/raw/image-bed/2021/12/18/image-20211215191246850.png" alt="image-20211215191246850" style="zoom: 80%;" />
 
  
 
