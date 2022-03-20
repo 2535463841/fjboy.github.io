@@ -1,4 +1,6 @@
 site_name: FJBoy's Docs
+repo_url: https://github.com/fjoby-light-fs
+copyright: Copyright &copy; 2021 - 2030 fjboy
 theme:
   name: material
   language: zh
@@ -7,6 +9,7 @@ theme:
 
 plugins:
   - mermaid2
+  - search
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -24,3 +27,9 @@ extra_javascript:
 
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fjboy
+      name: squidfunk on github
